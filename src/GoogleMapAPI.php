@@ -2643,7 +2643,7 @@ class GoogleMapAPI {
 	    $_coords = false;
         switch($this->lookup_service) {
             case 'GOOGLE':
-                $_url = sprintf('//%s/maps/api/geocode/json?sensor=%s&address=%s',$this->lookup_server['GOOGLE'], $this->mobile==true?"true":"false", rawurlencode($address));
+                $_url = sprintf('http://%s/maps/api/geocode/json?sensor=%s&address=%s',$this->lookup_server['GOOGLE'], $this->mobile==true?"true":"false", rawurlencode($address));
                 if($_result = $this->fetchURL($_url)) {
                     $_result_parts = json_decode($_result);
                     if($_result_parts->status!="OK"){
@@ -2655,7 +2655,7 @@ class GoogleMapAPI {
                 break;
             case 'YAHOO':
             default:        
-                $_url = sprintf('//%s/MapsService/V1/geocode?appid=%s&location=%s',$this->lookup_server['YAHOO'],$this->app_id,rawurlencode($address));
+                $_url = sprintf('http://%s/MapsService/V1/geocode?appid=%s&location=%s',$this->lookup_server['YAHOO'],$this->app_id,rawurlencode($address));
                 if($_result = $this->fetchURL($_url)) {
                     preg_match('!<Latitude>(.*)</Latitude><Longitude>(.*)</Longitude>!U', $_result, $_match);
                     $_coords['lon'] = $_match[2];
@@ -2678,14 +2678,14 @@ class GoogleMapAPI {
 	    $_result = false;
         switch($this->lookup_service) {
             case 'GOOGLE':
-                $_url = sprintf('//%s/maps/api/geocode/json?sensor=%s&address=%s',$this->lookup_server['GOOGLE'], $this->mobile==true?"true":"false", rawurlencode($address));
+                $_url = sprintf('http://%s/maps/api/geocode/json?sensor=%s&address=%s',$this->lookup_server['GOOGLE'], $this->mobile==true?"true":"false", rawurlencode($address));
                 if($_result = $this->fetchURL($_url)) {
                     return json_decode($_result);
                 }
                 break;
             case 'YAHOO':
             default:        
-                $_url = '//%s/MapsService/V1/geocode';
+                $_url = 'http://%s/MapsService/V1/geocode';
                 $_url .= sprintf('?appid=%s&location=%s',$this->lookup_server['YAHOO'],$this->app_id,rawurlencode($address));
                 if($_result = $this->fetchURL($_url)) {
 	                return $_result;
