@@ -5,15 +5,13 @@ namespace kossmoss\GoogleMaps;
 /**
  * Component for using Yii2 with GoogleMapAPI https://github.com/streetlogics/php-google-map-api
  *
- * @author Egor.Verbitsky
- * @date: 19.10.2012
+ * @copyright 2016 Konstantin Petrov
  * @author kossmoss radiokoss@gmail.com
  * @date: 10.02.2016
- *
  */
 use \Yii;
 use yii\base\ErrorException;
-use GoogleMapAPI;
+use kossmoss\GoogleMaps\GoogleMapAPI;
 
 class GoogleMaps
 {
@@ -62,7 +60,7 @@ class GoogleMaps
 			self::$_google = new GoogleMapAPI();
 			self::$_google->_minify_js = false;
 
-			// Применяем опции
+			// Apply options
 			if (is_array($options)) {
 				foreach ($options as $key => $value) {
 					self::$_google->$key = $value;

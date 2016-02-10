@@ -5,11 +5,15 @@
 	"type": "library",
 	"authors": [
 		{
-			"name":      "Konstantin Petrov",
-			"email":     "radiokoss@gmail.com"
+			"name":      "Monte Ohrt"
 		},
 		{
-			"name":      "Egorio Verbitsky"
+			"name":      "Brad Wedell",
+			"homepage":  "https://github.com/streetlogics/php-google-map-api"
+		},
+		{
+			"name":      "Konstantin Petrov",
+			"email":     "radiokoss@gmail.com"
 		}
 	],
 	"require": {
@@ -18,6 +22,7 @@
     },
 	"autoload": {
 		"classmap": [
+			"src/",
 			"GoogleMaps.php"
 		]
 	}
