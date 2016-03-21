@@ -30,7 +30,7 @@ class GoogleMapsAsset extends AssetBundle
 			throw new ErrorException("You must configure GoogleMapsAsset. See README.md for details.");
 		}
 		$this->js = [
-			'http://maps.google.com/maps/api/js?key='.$this->apiKey.'&language='.$this->language . $callback,
+			'http://maps.google.com/maps/api/js?key='.$this->apiKey.'&language='.$this->language,
 		];
 	}
 } 
