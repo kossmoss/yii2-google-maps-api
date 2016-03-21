@@ -10,7 +10,7 @@ Add a dependency to your project's composer.json:
 ```json
 {
 	"require": {
-		"kossmoss/yii2-google-maps-api": "^1.1"
+		"kossmoss/yii2-google-maps-api": "^0.2"
 	}
 }
 ```
